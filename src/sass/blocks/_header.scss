@@ -1,0 +1,89 @@
+.header {
+   font-family: Montserrat;
+   font-weight: 400;
+   font-size: 20px;
+   color: #000000;
+   display: flex;
+   justify-content: space-between;
+   &__logo {
+      padding-top: 28px;
+      margin-left: 115px;
+   }
+   &__nav {
+      width: 826px;
+      min-height: 70px;
+
+      display: flex;
+
+      &_calendar {
+         margin-right: 65px;
+         height: 70px;
+         display: flex;
+         align-items: center;
+         &_logo {
+            margin-right: 18px;
+            max-height: 39px;
+         }
+         &_title {
+            display: flex;
+            align-items: center;
+            height: 70px;
+         }
+      }
+      &_designer {
+         margin-right: 30px;
+         padding: 0 5px;
+         height: 70px;
+         display: flex;
+         align-items: center;
+         &_logo {
+            margin-right: 18px;
+            max-height: 39px;
+         }
+         &_title {
+            display: flex;
+            align-items: center;
+            height: 70px;
+         }
+      }
+      &_theme-switch {
+         width: 120px;
+         height: 70px;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         &_button {
+            position: relative;
+            &::after {
+               right: -32px;
+               width: 20px;
+               height: 20px;
+               position: absolute;
+               content: "";
+               background: url("/icons/theme_switch_off.svg") no-repeat right center;
+            }
+            &::before {
+               left: -32px;
+               width: 20px;
+               height: 20px;
+               position: absolute;
+               content: "";
+               background: url("/icons/theme_switch_ON.svg") no-repeat right center;
+            }
+            display: flex;
+            align-items: center;
+            height: 21px;
+            width: 43px;
+            background-color: rgb(0, 0, 0);
+            border-radius: 90px;
+            padding: 0 5px;
+            &_selector {
+               background-color: #fff;
+               width: 11px;
+               height: 11px;
+               border-radius: 90px;
+            }
+         }
+      }
+   }
+}
