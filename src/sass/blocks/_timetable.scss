@@ -1,5 +1,13 @@
 .timetable {
    &__date {
+      &::after {
+         content: "";
+         display: block;
+         height: 50px;
+         margin-top: 10px;
+
+         background-color: rgb(207, 37, 37);
+      }
       margin: 15px auto 0;
       height: 110px;
       width: 245px;
@@ -66,6 +74,7 @@
    height: 101px;
    width: 728px;
    background: #ffffff;
+
    &__cabinet {
       height: 100%;
       width: 105px;
