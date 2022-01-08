@@ -6,8 +6,23 @@
    display: flex;
    justify-content: space-between;
    &__logo {
-      padding-top: 28px;
+      padding-top: 23px;
       margin-left: 115px;
+      font-family: Bad Script;
+      font-style: italic;
+      font-weight: normal;
+      font-size: 30px;
+      text-decoration: none;
+      color: rgba(0, 0, 0, 0.56);
+      &::after {
+         content: "";
+         background-image: url(../icons/rospis_logo.svg);
+         position: absolute;
+         width: 51px;
+         height: 44px;
+         left: 214px;
+         top: 4px;
+      }
    }
    &__nav {
       width: 826px;
