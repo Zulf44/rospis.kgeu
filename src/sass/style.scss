@@ -5,10 +5,16 @@
 @import "blocks/header";
 @import "blocks/timetable";
 @import "base/animatoin";
+@import "blocks/calendar";
 body {
    background: #edeef0;
 }
 .wrapper {
+   display: block;
    margin: 0 auto;
    width: 1024px;
+   min-height: 100%;
+}
+.red {
+   color: red;
 }
