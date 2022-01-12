@@ -104,7 +104,7 @@
             </div>
          </div>
 
-         <div class="calendar">
+         <div class="calendar" id="app">
             <div class="calendar__date">
                <div class="date-day">ПН</div>
                <div class="date-day">ВТ</div>
@@ -115,42 +115,10 @@
                <div class="date-day red">ВС</div>
             </div>
             <div class="calendar__date_namber-box">
-               <div class="calendar__date_namber-box_wrapper a">
-                  <div class="date-namber"></div>
-                  <div class="date-namber"></div>
-                  <div class="date-namber"></div>
-                  <div class="date-namber"></div>
-                  <div class="date-namber"></div>
-                  <div class="date-namber"></div>
-                  <div class="date-namber"></div>
-                  <div class="date-namber"></div>
-                  <div class="date-namber"></div>
-                  <div class="date-namber"></div>
-                  <div class="date-namber"></div>
-                  <div class="date-namber"></div>
-                  <div class="date-namber"></div>
-                  <div class="date-namber"></div>
-                  <div class="date-namber"></div>
-                  <div class="date-namber"></div>
-                  <div class="date-namber"></div>
-                  <div class="date-namber"></div>
-                  <div class="date-namber"></div>
-                  <div class="date-namber"></div>
-                  <div class="date-namber"></div>
-                  <div class="date-namber"></div>
-                  <div class="date-namber"></div>
-                  <div class="date-namber"></div>
-                  <div class="date-namber "></div>
-                  <div class="date-namber"></div>
-                  <div class="date-namber"></div>
-                  <div class="date-namber"></div>
-                  <div class="date-namber"></div>
-                  <div class="date-namber"></div>
-                  <div class="date-namber"></div>
-                  <div class="date-namber"></div>
-                  <div class="date-namber"></div>
-                  <div class="date-namber"></div>
-                  <div class="date-namber"></div>
+               <div class="calendar__date_namber-box_wrapper " v-on:click="elemPLUS">
+
+                  <div class="date-namber" v-for="elem in nambers">{{elem}}</div>
+
                </div>
                <div class="lesson-type">
                   <div class="lesson-type__lecture">

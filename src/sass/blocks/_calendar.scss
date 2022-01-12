@@ -36,11 +36,20 @@
 }
 
 .date-namber {
+   display: flex;
    margin: 14px 17px 0 20px;
    width: 60px;
    height: 60px;
    background: rgba(255, 255, 255, 0.6);
    border-radius: 12px;
+   font-family: Lexend Deca;
+   font-style: normal;
+
+   font-size: 36px;
+   line-height: 45px;
+   align-items: center;
+
+   justify-content: center;
 }
 
 .lesson-type {

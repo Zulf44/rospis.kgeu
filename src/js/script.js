@@ -1,77 +1,68 @@
+const App = {
+   data() {
+      return {
+         counter: 0,
+         nambers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10,],
+         lessons: [
+            {
+               timeStart: "11:20",
+               lessonName: "Организационное собрание",
+               classroom: "А",
+               teacher: "Дирекция ИЦТЭ",
+               lessonType: "l"
+            },
+            {
+               timeStart: "13:20",
+               lessonName: "Теория систем и системный анализ",
+               classroom: "Д-418",
+               teacher: "доц. Андреев В.В.",
+               lessonType: "l"
+            },
+            {
+               timeStart: "15-00",
+               lessonName: "Пакеты прикладных программ",
+               classroom: "В-619",
+               teacher: "ст.пр. Эшелиоглу Р.И.",
+               lessonType: "l"
+            }
 
-
-
-
-
-
-let soloProd = [];
-
-function sum(sum, coupon, ...products) {
-
-   let soloProd = products.filter(item => item >= 260);
-
-   soloProd.forEach(item => console.log(item + ' - Покупать отдельно!'));
-   console.log(typeof (soloProd))
-
-};
-
-
-
-setTimeout(function () { console.log('hi') }, 2000);
-
-
-let rrr = {
-   red: true,
-   age: 21,
-   sayHI() {
-      console.log('hi')
+         ]
+      }
    },
-}
+   methods: {
 
-aaa = rrr;
-
-aaa.age = 27;
-
-console.log(rrr.age);
-
-
-rrr.sayHI()
-
-
-
-function User(name) {
-
-
-
-   this.name = name;
-   this.isAdmin = false;
-
+   },
+   comp
 
 }
 
 
+Vue.createApp(App).mount("#app")
 
+// const day = {
+//    date: "19.01.2022",
+//    lessons: [
+//       {
+//          timeStart: "11:20",
+//          lessonName: "Организационное собрание",
+//          classroom: "А",
+//          teacher: "Дирекция ИЦТЭ",
+//          lessonType: "l"
+//       },
+//       {
+//          timeStart: "13:20",
+//          lessonName: "Теория систем и системный анализ",
+//          classroom: "Д-418",
+//          teacher: "доц. Андреев В.В.",
+//          lessonType: "l"
+//       },
+//       {
+//          timeStart: "15-00",
+//          lessonName: "Пакеты прикладных программ",
+//          classroom: "В-619",
+//          teacher: "ст.пр. Эшелиоглу Р.И.",
+//          lessonType: "l"
+//       }
 
-
-
-console.log(User);
-
-
-
-
-
-
-let rus = {
-   name: "zulf",
-   age: 24,
-   schol: "14 gimnazium",
-}
-
-let ppp = JSON.stringify(rus);
-
-
-console.log(ppp);
-
-ppp = JSON.parse(ppp);
-
-console.log(ppp);
+//    ]
+// }
