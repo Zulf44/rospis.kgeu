@@ -9,7 +9,7 @@ const App = {
                lessonName: "Организационное собрание",
                classroom: "А",
                teacher: "Дирекция ИЦТЭ",
-               lessonType: "l"
+               lessonType: "Лекция"
             },
             {
                timeStart: "13:20",
@@ -24,15 +24,64 @@ const App = {
                classroom: "В-619",
                teacher: "ст.пр. Эшелиоглу Р.И.",
                lessonType: "l"
+            },
+            {
+               timeStart: "15-00",
+               lessonName: "Пакеты прикладных программ",
+               classroom: "В-619",
+               teacher: "ст.пр. Эшелиоглу Р.И.",
+               lessonType: "l"
+            },
+            {
+               timeStart: "15-00",
+               lessonName: "Пакеты прикладных программ",
+               classroom: "В-619",
+               teacher: "ст.пр. Эшелиоглу Р.И.",
+               lessonType: "l"
             }
 
-         ]
+         ],
+         dayOfWeek: "",
+         dateToday: ""
+
       }
    },
    methods: {
+      getdayOfWeek() {
+         let toDay = new Date;
+         switch (toDay.getDay()) {
+            case 0:
+               this.dayOfWeek = "Воскресенье";
+               break;
+            case 1:
+               this.dayOfWeek = "Понедельник";
+               break;
+            case 2:
+               this.dayOfWeek = "Вторник";
+               break;
+            case 3:
+               this.dayOfWeek = "Среда";
+               break;
+            case 4:
+               this.dayOfWeek = "Четверг";
+               break;
+            case 5:
+               this.dayOfWeek = "Пятница";
+               break;
+            case 6:
+               this.dayOfWeek = "Суббота";
+               break;
+
+
+         }
+         let DD = toDay.getDate(),
+            MM = toDay.getMonth(),
+            YYYY = toDay.getFullYear();
+         this.dateToday = `${DD}.${MM + 1}.${YYYY}`
+      },
 
    },
-   comp
+
 
 }
 

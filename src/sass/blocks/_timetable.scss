@@ -11,6 +11,9 @@
       color: #000000;
       display: flex;
       justify-content: space-around;
+      &_scoreboard_day-of-week {
+         margin-bottom: 10px;
+      }
       &_day {
          color: #000000;
          font-family: Bad Script;
@@ -19,7 +22,7 @@
       }
 
       &_leftBTN {
-         margin-top: 15px;
+         margin-top: 18px;
          display: inline-block;
          width: 63px;
          height: 69px;
@@ -33,7 +36,7 @@
          }
       }
       &_rightBTN {
-         margin-top: 15px;
+         margin-top: 18px;
          display: inline-block;
          width: 63px;
          height: 69px;
@@ -56,7 +59,7 @@
 
       &_number {
          width: 67px;
-         height: 450px;
+
          border-right: 4px solid #000000;
          display: flex;
          flex-direction: column;
@@ -69,7 +72,6 @@
          }
       }
       &_time {
-         height: 452px;
          width: 170px;
          border-right: 4px solid #000000;
          display: flex;
@@ -89,7 +91,6 @@
          display: flex;
          flex-direction: column;
 
-         height: 480px;
          width: 731px;
       }
    }
@@ -108,7 +109,7 @@
       width: 105px;
       font-family: Montserrat;
       font-style: normal;
-      font-size: 35px;
+      font-size: 32px;
       display: flex;
       align-items: center;
       justify-content: center;
