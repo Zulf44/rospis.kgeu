@@ -5,7 +5,7 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Docume3nt</title>
+   <title>Роспись</title>
 
    <link rel="stylesheet" href="css/normalaze.css">
    <link rel="stylesheet" href="css/style.min.css">
@@ -40,7 +40,7 @@
    <div class="wrapper">
       <div class="timetable">
          <div class="timetable__date">
-            <button class="timetable__date_leftBTN" @click="getdayOfWeek">
+            <button class="timetable__date_leftBTN" @click="reduceDate">
                <img src="/icons/swich_btn.svg" alt="a">
             </button>
             <div class="timetable__date_scoreboard">
@@ -48,26 +48,28 @@
                <div class="timetable__date_scoreboard_number">{{dateToday}}</div>
             </div>
 
-            <button class="timetable__date_rightBTN">
+            <button class="timetable__date_rightBTN" @click="increaseDate">
                <img src="/icons/swich_btn.svg" alt="a">
             </button>
          </div>
          <div class="timetable__lessons">
             <div class="timetable__lessons_number">
-               <div class="timetable__lessons_number_slot " v-for="(time, i) in lessons">{{i+1}}</div>
+               <div class="timetable__lessons_number_slot " v-for="(time, i) in lessonToday">{{i+1}}</div>
 
             </div>
             <div class="timetable__lessons_time">
-               <div class="timetable__lessons_time_slot" v-for="(time, i) in lessons">{{time.timeStart}}</div>
+               <div class="timetable__lessons_time_slot" v-for="(item, i) in lessonToday">
+                  {{`${item.lessonStart.getHours()}:${item.lessonStart.getMinutes()}`}}
+               </div>
 
             </div>
             <div class="timetable__lessons_wrapper">
-               <div class="lesson" id="qqq" v-for="(time, i) in lessons">
-                  <div class="lesson__cabinet">{{time.classroom}}</div>
-                  <div class="lesson__thing">{{time.lessonName}}</div>
+               <div class="lesson" id="qqq" v-for="(item, i) in lessonToday">
+                  <div class="lesson__cabinet">{{item.classroom}}</div>
+                  <div class="lesson__thing">{{item.lessonName}}</div>
                   <div class="lesson__add-information">
-                     <div class="lesson__add-information_teacher">{{time.teacher}}</div>
-                     <div class="lesson__add-information_type">{{time.lessonType}}</div>
+                     <div class="lesson__add-information_teacher">{{item.teacher}}</div>
+                     <div class="lesson__add-information_type">{{item.lessonType}}</div>
                   </div>
 
                </div>
@@ -105,6 +107,8 @@
          </div>
       </div>
    </div>
+
+
 
    <script src="https://unpkg.com/vue@next"></script>
    <script src="js/script.js"></script>
