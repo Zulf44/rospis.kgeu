@@ -58,6 +58,8 @@ const App = {
          dateToday: "",
          toDay: new Date,
          lessonToday: [],
+         calendar: [],
+         toDayStatic: new Date
 
 
 
@@ -101,7 +103,11 @@ const App = {
 
 
          this.lessonToday = this.lessons.filter(function (item, index, array) {
-            return array[index].lessonStart.getDate() === toDay.getDate()
+            return (
+               array[index].lessonStart.getDate() === toDay.getDate()
+               && array[index].lessonStart.getMonth() === toDay.getMonth()
+               && array[index].lessonStart.getFullYear() === toDay.getFullYear()
+            )
          })
 
       },
@@ -109,14 +115,75 @@ const App = {
          this.toDay.setTime(this.toDay.getTime() + 86400000);
          this.getdayOfWeek();
          this.getLesonToday(this.toDay);
+         this.calendarInit(this.toDay)
       },
       reduceDate() {
          this.toDay.setTime(this.toDay.getTime() - 86400000);
          this.getdayOfWeek();
          this.getLesonToday(this.toDay);
+         this.calendarInit(this.toDay)
+      },
+      calendarInit(today) {
+         this.calendar = []
+         // По новой
+
+         // Получаем количество дней в текущем месяце 
+         today.getDaysInMounth = function () {
+
+            let date1 = new Date(this.getFullYear(), this.getMonth(), 1);
+            let date2 = new Date(this.getFullYear(), (this.getMonth() + 1), 1);
+            let date3 = Math.round((date2 - date1) / 1000 / 3600 / 24);
+            return date3;
+         }
+         console.log(today.getDaysInMounth())
+
+         // Получаем день недели первого числа месяца
+
+         today.getDayWorld = function () {
+            todayClone = new Date(this.getFullYear(), this.getMonth())
+            switch (todayClone.getDay()) {
+               case 0:
+                  return 6;
+                  break;
+               case 1:
+                  return 0;
+                  break;
+               case 2:
+                  return 1;
+                  break;
+               case 3:
+                  return 2;
+                  break;
+               case 4:
+                  return 3;
+                  break;
+               case 5:
+                  return 4;
+                  break;
+               case 6:
+                  return 5;
+                  break;
+
+            }
+         }
+
+         console.log(today.getDayWorld())
+
+         // добавляем нули в перед
+         for (i = 1; i < today.getDayWorld() + 1; i++) {
+            this.calendar.push(0)
+         }
+
+         // добовляем числа месяца в массив
+         for (i = 1; i <= today.getDaysInMounth(); i++) {
+            this.calendar.push(i)
+         }
+
       }
+
    },
    mounted() {
+      this.calendarInit(this.toDay)
       this.getdayOfWeek()
       this.getLesonToday(this.toDay)
    }
@@ -226,49 +293,6 @@ Vue.createApp(App).mount("#app")
 //    console.log(w)
 // }
 
-// function Calendar2(id, year, month) {
-//    var Dlast = new Date(year, month + 1, 0).getDate(),
-//       D = new Date(year, month, Dlast),
-//       DNlast = new Date(D.getFullYear(), D.getMonth(), Dlast).getDay(),
-//       DNfirst = new Date(D.getFullYear(), D.getMonth(), 1).getDay(),
-//       calendar = '<tr>',
-//       month = ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"];
-//    if (DNfirst != 0) {
-//       for (var i = 1; i < DNfirst; i++) calendar += '<td>';
-//    } else {
-//       for (var i = 0; i < 6; i++) calendar += '<td>';
-//    }
-//    for (var i = 1; i <= Dlast; i++) {
-//       if (i == new Date().getDate() && D.getFullYear() == new Date().getFullYear() && D.getMonth() == new Date().getMonth()) {
-//          calendar += '<td class="today">' + i;
-//       } else {
-//          calendar += '<td>' + i;
-//       }
-//       if (new Date(D.getFullYear(), D.getMonth(), i).getDay() == 0) {
-//          calendar += '<tr>';
-//       }
-//    }
-//    for (var i = DNlast; i < 7; i++) calendar += '<td>&nbsp;';
-//    document.querySelector('#' + id + ' tbody').innerHTML = calendar;
-//    document.querySelector('#' + id + ' thead td:nth-child(2)').innerHTML = month[D.getMonth()] + ' ' + D.getFullYear();
-//    document.querySelector('#' + id + ' thead td:nth-child(2)').dataset.month = D.getMonth();
-//    document.querySelector('#' + id + ' thead td:nth-child(2)').dataset.year = D.getFullYear();
-//    if (document.querySelectorAll('#' + id + ' tbody tr').length < 6) {  // чтобы при перелистывании месяцев не "подпрыгивала" вся страница, добавляется ряд пустых клеток. Итог: всегда 6 строк для цифр
-//       document.querySelector('#' + id + ' tbody').innerHTML += '<tr><td>&nbsp;<td>&nbsp;<td>&nbsp;<td>&nbsp;<td>&nbsp;<td>&nbsp;<td>&nbsp;';
-//    }
-// }
-// Calendar2("calendar2", new Date().getFullYear(), new Date().getMonth());
-// // переключатель минус месяц
-// document.querySelector('#calendar2 thead tr:nth-child(1) td:nth-child(1)').onclick = function () {
-//    Calendar2("calendar2", document.querySelector('#calendar2 thead td:nth-child(2)').dataset.year, parseFloat(document.querySelector('#calendar2 thead td:nth-child(2)').dataset.month) - 1);
-// }
-// // переключатель плюс месяц
-// document.querySelector('#calendar2 thead tr:nth-child(1) td:nth-child(3)').onclick = function () {
-//    Calendar2("calendar2", document.querySelector('#calendar2 thead td:nth-child(2)').dataset.year, parseFloat(document.querySelector('#calendar2 thead td:nth-child(2)').dataset.month) + 1);
-// }
-let today = new Date;
 
-console.log(today);
-today.setTime(today.getTime() + 86400000)
 
-console.log(today);
+
