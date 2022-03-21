@@ -16,6 +16,7 @@
       color: rgba(0, 0, 0, 0.56);
       &::after {
          content: "";
+         background-size: cover;
          background-image: url(../icons/rospis_logo.svg);
          position: absolute;
          width: 51px;
@@ -36,7 +37,7 @@
          width: 179px;
          height: 70px;
          margin-right: 30px;
-         font-size: 20px;
+
          &::before {
             content: "";
             background: url("/icons/donat.svg") no-repeat right center;
@@ -58,6 +59,7 @@
             width: 39px;
             height: 39px;
             margin-right: 10px;
+            background-size: cover;
          }
       }
 
@@ -76,6 +78,7 @@
                height: 36px;
                position: absolute;
                content: "";
+               background-size: cover;
                background: url("/icons/calendar.svg") no-repeat right center;
             }
             &::before {
@@ -84,6 +87,7 @@
                height: 44px;
                position: absolute;
                content: "";
+               background-size: cover;
                background: url("/icons/spis.svg") no-repeat right center;
             }
             display: flex;
@@ -116,6 +120,7 @@
                height: 20px;
                position: absolute;
                content: "";
+               background-size: cover;
                background: url("/icons/theme_switch_off.svg") no-repeat right center;
             }
             &::before {
@@ -124,6 +129,7 @@
                height: 20px;
                position: absolute;
                content: "";
+               background-size: cover;
                background: url("/icons/theme_switch_ON.svg") no-repeat right center;
             }
             display: flex;

@@ -1,4 +1,7 @@
 .timetable {
+   margin-bottom: 150px;
+   opacity: 0;
+   animation: ani 2s forwards;
    margin-top: 93px;
    &__date {
       margin: 15px auto 0;
@@ -127,6 +130,7 @@
       display: flex;
       align-items: center;
       text-align: center;
+      justify-content: space-around;
    }
    &__add-information {
       display: flex;
@@ -151,5 +155,13 @@
          font-weight: normal;
          font-size: 20px;
       }
+   }
+}
+@keyframes ani {
+   0% {
+      opacity: 0;
+   }
+   100% {
+      opacity: 1;
    }
 }

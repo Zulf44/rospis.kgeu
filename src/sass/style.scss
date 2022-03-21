@@ -6,9 +6,10 @@
 @import "blocks/timetable";
 @import "base/animatoin";
 @import "blocks/calendar";
+@import "base/media";
 body {
    background: #edeef0;
-   min-height: 1200px;
+   min-height: 1500px;
 }
 .wrapper {
    display: block;
@@ -18,4 +19,7 @@ body {
 }
 .red {
    color: red;
+}
+.none {
+   color: #edeef0;
 }
