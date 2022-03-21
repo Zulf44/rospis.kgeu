@@ -311,7 +311,7 @@ const App = {
          toDay: new Date(2022, 0, 20),
          lessonToday: [],
          calendar: [],
-         toDayStatic: new Date,
+         toDayStatic: new Date(2022, 0, 20),
          lectureDays: [],
          examDays: [],
          calendarSwitchButtonPosition: 0,
