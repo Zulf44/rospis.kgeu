@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Роспись</title>
+
+   <link rel="stylesheet" href="css/normalaze.css">
+   <link rel="stylesheet" href="css/style.min.css">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Lexend+Deca:wght@100;200;300&display=swap"
+      rel="stylesheet">
+</head>
+
+<body>
+   <div class="app" id="app">
+      <header class="header ">
+         <a href="" class="header__logo"> <img src="" alt="">
+            Роспись
+         </a>
+         <nav class="header__nav">
+            <a href="https://www.tinkoff.ru/rm/abdullin.zulfat1/P8IWj66899" class="header__nav_donat">Поддержать</a>
+            <a href="https://drive.google.com/drive/folders/1pCUFpOwq4fSS-5sf7taSKWZIpF4m2ixI"
+               class="header__nav_files">Файлы</a>
+            <div class="header__nav_calendar-switch">
+               <button class="header__nav_calendar-switch_button" @click:="counterPLUS">
+                  <div class="header__nav_calendar-switch_button_selector"></div>
+               </button>
+            </div>
+            <div class="header__nav_theme-switch">
+               <button class="header__nav_theme-switch_button">
+                  <div class="header__nav_theme-switch_button_selector"></div>
+               </button>
+            </div>
+         </nav>
+      </header>
+
+      <div class="wrapper">
+         <div class="timetable">
+            <div class="timetable__date">
+               <button class="timetable__date_leftBTN" @click="reduceDate">
+                  <img src="/icons/swich_btn.svg" alt="a">
+               </button>
+               <div class="timetable__date_scoreboard">
+                  <div class="timetable__date_scoreboard_day-of-week">{{dayOfWeek}}</div>
+                  <div class="timetable__date_scoreboard_number">{{dateToday}}</div>
+               </div>
+
+               <button class="timetable__date_rightBTN" @click="increaseDate">
+                  <img src="/icons/swich_btn.svg" alt="a">
+               </button>
+            </div>
+
+            <div class="timetable__lessons">
+               <div class="timetable__lessons_number">
+                  <div class="timetable__lessons_number_slot " v-for="(time, i) in lessonToday">{{i+1}}</div>
+
+               </div>
+               <div class="timetable__lessons_time">
+                  <div class="timetable__lessons_time_slot" v-for="(item, i) in lessonToday">
+                     {{`${item.lessonStart.getHours()}:${item.lessonStart.getMinutes() == 0 ? "00" :
+                     item.lessonStart.getMinutes()}`}}
+                  </div>
+
+               </div>
+               <div class="timetable__lessons_wrapper">
+                  <div class="lesson" id="qqq" v-for="(item, i) in lessonToday">
+                     <div class="lesson__cabinet"
+                        :style="{fontSize: (item.classroom.length > 5  && this.width >= 500) ? '25px': '' }">
+                        {{item.classroom}}</div>
+                     <div class="lesson__thing"
+                        :style="{fontSize: (item.lessonName.length > 45 && this.width >= 500 ) ? '20px': '' }">
+                        {{item.lessonName}}</div>
+                     <div class=" lesson__add-information">
+                        <div class="lesson__add-information_teacher">{{item.teacher}}</div>
+                        <div class="lesson__add-information_type">{{item.lessonType}}</div>
+                     </div>
+
+                  </div>
+
+               </div>
+            </div>
+
+            <div class="calendar">
+               <div class="calendar__date">
+                  <div class="date-day ">ПН</div>
+                  <div class="date-day">ВТ</div>
+                  <div class="date-day">СР</div>
+                  <div class="date-day">ЧТ</div>
+                  <div class="date-day">ПТ</div>
+                  <div class="date-day red">СБ</div>
+                  <div class="date-day red">ВС</div>
+               </div>
+               <div class="calendar__date_namber-box">
+                  <div class="calendar__date_namber-box_wrapper ">
+
+                     <button class="date-namber " v-for="elem in calendar" :style="{visibility: elem == 0 ? 'hidden' : 'visible',
+                              color: elem == toDayStatic.getDate() && toDay.getMonth() === toDayStatic.getMonth() ? 'red' : 'black'
+                           }" @click="switchDateFromCalendar(elem)"
+                        :class="(elem == toDay.getDate() ) ? 'animation'  : '0'">
+                        {{elem}}
+                     </button>
+
+                  </div>
+                  <div class="lesson-type">
+                     <div class="lesson-type__lecture">
+                        <div class="lesson-type__lecture_color"></div>
+                        <div class="lesson-type__lecture_name"> - ЛЕКЦИЯ</div>
+                     </div>
+                     <div class="lesson-type__exam">
+                        <div class="lesson-type__exam_color"></div>
+                        <div class="lesson-type__exam_name">- ЭКЗАМЕН/ЗАЧЕТ</div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+
+   </div>
+
+   <script src="https://unpkg.com/vue@next"></script>
+   <script src="js/main.js"></script>
+</body>
+
+</html>

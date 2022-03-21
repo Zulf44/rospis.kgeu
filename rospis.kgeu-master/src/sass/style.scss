@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca&family=Lexend+Mega&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca&family=Lexend+Giga&family=Lexend+Mega&display=swap");
+@import "blocks/header";
+@import "blocks/timetable";
+@import "base/animatoin";
+@import "blocks/calendar";
+@import "base/media";
+body {
+   background: #edeef0;
+   min-height: 1500px;
+}
+.wrapper {
+   display: block;
+   margin: 0 auto;
+   width: 1024px;
+   min-height: 100%;
+}
+.red {
+   color: red;
+}
+.none {
+   color: #edeef0;
+}

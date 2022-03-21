@@ -1,0 +1,151 @@
+.header {
+   font-family: Montserrat;
+   font-weight: 400;
+   font-size: 20px;
+   color: #000000;
+   display: flex;
+   justify-content: space-between;
+   &__logo {
+      padding-top: 23px;
+      margin-left: 115px;
+      font-family: Bad Script;
+      font-style: italic;
+      font-weight: normal;
+      font-size: 30px;
+      text-decoration: none;
+      color: rgba(0, 0, 0, 0.56);
+      &::after {
+         content: "";
+         background-size: cover;
+         background-image: url(../icons/rospis_logo.svg);
+         position: absolute;
+         width: 51px;
+         height: 44px;
+         left: 214px;
+         top: 4px;
+      }
+   }
+   &__nav {
+      width: 826px;
+      min-height: 70px;
+
+      display: flex;
+      &_donat {
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         width: 179px;
+         height: 70px;
+         margin-right: 30px;
+
+         &::before {
+            content: "";
+            background: url("/icons/donat.svg") no-repeat right center;
+            width: 39px;
+            height: 39px;
+            margin-right: 10px;
+         }
+      }
+      &_files {
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         width: 179px;
+         height: 70px;
+         margin-right: 30px;
+         &::before {
+            content: "";
+            background: url("/icons/files.svg") no-repeat right center;
+            width: 39px;
+            height: 39px;
+            margin-right: 10px;
+            background-size: cover;
+         }
+      }
+
+      &_calendar-switch {
+         width: 120px;
+         height: 70px;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         margin-right: 50px;
+         &_button {
+            position: relative;
+            &::after {
+               right: -55px;
+               width: 36px;
+               height: 36px;
+               position: absolute;
+               content: "";
+               background-size: cover;
+               background: url("/icons/calendar.svg") no-repeat right center;
+            }
+            &::before {
+               left: -65px;
+               width: 48px;
+               height: 44px;
+               position: absolute;
+               content: "";
+               background-size: cover;
+               background: url("/icons/spis.svg") no-repeat right center;
+            }
+            display: flex;
+            align-items: center;
+            height: 21px;
+            width: 43px;
+            background-color: rgb(0, 0, 0);
+            border-radius: 90px;
+            padding: 0 5px;
+            &_selector {
+               background-color: #fff;
+               width: 11px;
+               height: 11px;
+               border-radius: 90px;
+            }
+         }
+      }
+
+      &_theme-switch {
+         width: 120px;
+         height: 70px;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         &_button {
+            position: relative;
+            &::after {
+               right: -32px;
+               width: 20px;
+               height: 20px;
+               position: absolute;
+               content: "";
+               background-size: cover;
+               background: url("/icons/theme_switch_off.svg") no-repeat right center;
+            }
+            &::before {
+               left: -32px;
+               width: 20px;
+               height: 20px;
+               position: absolute;
+               content: "";
+               background-size: cover;
+               background: url("/icons/theme_switch_ON.svg") no-repeat right center;
+            }
+            display: flex;
+            align-items: center;
+            height: 21px;
+            width: 43px;
+            background-color: rgb(0, 0, 0);
+            border-radius: 90px;
+            padding: 0 5px;
+            &_selector {
+               background-color: #fff;
+               width: 11px;
+               height: 11px;
+               border-radius: 90px;
+            }
+         }
+      }
+   }
+}

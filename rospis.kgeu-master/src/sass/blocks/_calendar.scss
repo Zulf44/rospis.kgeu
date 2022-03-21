@@ -1,0 +1,99 @@
+.calendar {
+   width: 710px;
+   min-height: 485px;
+
+   margin: 0 auto;
+   margin-top: 30px;
+   &__date {
+      min-height: 45px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+      &_namber-box {
+         display: block;
+         min-height: 440px;
+         width: 100%;
+         border-top: 4px solid #000000;
+         border-bottom: 4px solid #000000;
+         &_wrapper {
+            width: 100%;
+
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+         }
+      }
+   }
+}
+.date-day {
+   width: 96px;
+   height: 34px;
+   font-family: "Lexend Deca", sans-serif;
+
+   font-size: 24px;
+   line-height: 30px;
+}
+
+.date-namber {
+   display: flex;
+   margin: 14px 17px 0 20px;
+   width: 60px;
+   height: 60px;
+   background: rgba(255, 255, 255, 0.6);
+   border-radius: 12px;
+   font-family: Lexend Deca;
+   font-style: normal;
+   font-size: 36px;
+   line-height: 45px;
+   align-items: center;
+   justify-content: center;
+   transition: all 0.3s ease;
+   &:hover {
+      box-shadow: inset 0 0 0 5px #53ea93;
+   }
+}
+
+.lesson-type {
+   display: flex;
+   margin-top: 20px;
+   margin-bottom: 13px;
+   padding-left: 23px;
+   height: 20px;
+   width: 100%;
+   &__lecture {
+      display: flex;
+
+      height: 30px;
+      &_color {
+         width: 15px;
+         height: 15px;
+         background: #66ff58;
+      }
+      &_name {
+         margin-top: 1px;
+         font-family: Montserrat;
+         font-style: normal;
+         font-weight: normal;
+         font-size: 13px;
+         margin-left: 10px;
+      }
+   }
+   &__exam {
+      margin-left: 40px;
+      display: flex;
+      &_color {
+         width: 15px;
+         height: 15px;
+         background: #fb0505;
+      }
+      &_name {
+         margin-top: 1px;
+         font-family: Montserrat;
+         font-style: normal;
+         font-weight: normal;
+         font-size: 13px;
+         margin-left: 10px;
+      }
+   }
+}
