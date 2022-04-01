@@ -21,23 +21,23 @@
 
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-between;
+            justify-content: start;
          }
       }
    }
 }
 .date-day {
-   width: 96px;
+   width: 60px;
    height: 34px;
    font-family: "Lexend Deca", sans-serif;
-
+   margin: 14px 21px 0 20px;
    font-size: 24px;
    line-height: 30px;
 }
 
 .date-namber {
    display: flex;
-   margin: 14px 17px 0 20px;
+   margin: 14px 21px 0 20px;
    width: 60px;
    height: 60px;
    background: rgba(255, 255, 255, 0.6);
